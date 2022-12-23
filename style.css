@@ -1,0 +1,94 @@
+*{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: darkviolet;
+}
+.container{
+    background-color: white;
+    max-width: 410px;
+    border-radius: 8px;
+    padding: 16px 25px ;
+    height: 270px;
+    transition: 0.2s 0.2s ease;
+}
+.container.active{
+    height: 500px;
+}
+header h1{
+    font-size: 21px;
+    font-weight: 700;
+    font-family: sans-serif;
+}
+header p{
+    font-size:16px ;
+    color: brown;
+    margin-top: 5px;
+    font-family: sans-serif;
+}
+.container .box{
+    margin: 20px 0 30px;
+}
+.box :where(input , button){
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    height: 55px;
+}
+.box input{
+    padding: 0 17px;
+    border: 1px solid blue;
+    font-size: 18px;
+}
+.box button{
+    color: white;
+    background-color: purple;
+    font-size: 17px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.container .code{
+    border: 1px solid lightgrey;
+    padding: 33px 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+}
+.container.active .code{
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.5s 0.5s ease;
+}
+footer{
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    margin-left: 60px;
+    font-size: 1rem;
+    font-family: sans-serif;
+}
+
+/*responsiveness*/
+ @media screen and (max-width:500px){
+    .container{
+        max-width: 300px;
+    }
+    
+    .container.active{
+        height: 500px;
+    }
+    footer{
+        margin-left: 30px;
+        font-size: 0.7rem;
+    }
+ }
